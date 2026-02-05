@@ -63,12 +63,10 @@ first cd into /etc/dokploy ..
 now 'ls' should show these files. before adding the scripts you need your api key from earlier, and your firewall id from hetzner,
 so make this api call in terminal to get the firewall Id's
 
-    export HETZNER_API_TOKEN='key_her'
-
-curl -H "Authorization: Bearer $HETZNER_API_TOKEN" \
-  https://api.hetzner.cloud/v1/firewalls | jq '.firewalls[] | {id: .id, name: .name}'
+    export HETZNER_API_TOKEN='key_here'
+    curl -H "Authorization: Bearer $HETZNER_API_TOKEN" \ https://api.hetzner.cloud/v1/firewalls | jq '.firewalls[] | {id: .id, name: .name}'
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTM4Mjc4MjQxXX0=
+eyJoaXN0b3J5IjpbNTgxMTQ3MDM0XX0=
 -->
