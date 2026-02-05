@@ -140,7 +140,7 @@ However, since we completely blocked access to our server except bunny, then I k
 I haven't tried using iptables yet, but hetzner could stop this api with lower limits at any time so just monitor your logs to know. I hope someone makes a guide to add these to iptables. Many people might be on a vps provider that doesn't have a network level firewall, so this is needed.
 
 we could have forgone using firewall altogether, and allow any ip to port 80/443 and use traefik for blocking, https://doc.traefik.io/traefik/reference/routing-configuration/http/middlewares/ipallowlist/
-However traefik blocks far less per second than the firewall can. When people say their service is being attacked, it usually means they didn't think about any security beforehand.
+However traefik blocks far less per second than the firewall can. When people say their service is being attacked, it usually means they didn't think about any security beforehand. And a traefik blocker wouldn't have saved them, but a firewall could, since bunny can just turn on expert level bot fight mode.
 
 ## Crowdsec vs Bunny waf
 I'm no expert on setting up a firewall, It comes down to do you want to worry about your own security or offload that to an external  Web access firewall. At first I didn't know  crowdsec is meant to be your only firewall and you might need some traefik plugins like owasp 10 rule protector to match the abilities of some wafs with lots of features. But crowdsec wasn't meant to be behind this proxy in the first place, meaning we wouldn't have to turn on insecure mode or add trusted ip's to traefik forwardedHeaders. So I made it a lot more complex when I basically added 2 firewalls, and bunny made it more complex by not having < 20 ips like cloudfare, but having 940.
@@ -150,8 +150,7 @@ To me, the waf is cheap enough, since your paying per million request. The real 
 
 Crowdsec is easy enough to setup but another thing to worry about, plus all the other things we would need
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMTY5NDc2MzUsNjg2MzI5OTAzLC0xND
-M4MjgxMDgwLDk2NDMxNjE4MiwtNDQwMjcyMzcxLC0xMDQzNzI3
-NDAxLC0xOTE2NDg1ODY5LC00MjgwMjQzNDUsMjg0MDk5NDM2XX
-0=
+eyJoaXN0b3J5IjpbODM3MjU1NzczLDY4NjMyOTkwMywtMTQzOD
+I4MTA4MCw5NjQzMTYxODIsLTQ0MDI3MjM3MSwtMTA0MzcyNzQw
+MSwtMTkxNjQ4NTg2OSwtNDI4MDI0MzQ1LDI4NDA5OTQzNl19
 -->
