@@ -120,7 +120,7 @@ chmod +x get-bunnycdn-2iplist.sh
 ```
 
 Paste the code from here:  
-[https://github.com/MooseCapital/md-post/blob/main/bunny-waf-dokploy-scripts/get-bunnycdn-2iplist.sh](https://github.com/MooseCapital/md-post/blob/main/bunny-waf-dokploy-scripts/get-bunnycdn-2iplist.sh)
+[https://github.com/MooseCapital/md-post/blob/main/scripts/get-bunnycdn-2iplist.sh](https://github.com/MooseCapital/md-post/blob/main/bunny-waf-dokploy-scripts/get-bunnycdn-2iplist.sh)
 
 ### Create the Firewall Update Script
 
@@ -130,7 +130,7 @@ chmod +x hetzner-firewall-update.sh
 ```
 
 Paste the code from here, **but you'll need to edit it** with your Hetzner API key and those three firewall IDs so it can call them with the IP list:  
-[https://github.com/MooseCapital/md-post/blob/main/bunny-waf-dokploy-scripts/hetzner-firewall-update.sh](https://github.com/MooseCapital/md-post/blob/main/bunny-waf-dokploy-scripts/hetzner-firewall-update.sh)
+[https://github.com/MooseCapital/md-post/blob/main/scripts/hetzner-firewall-update.sh](https://github.com/MooseCapital/md-post/blob/main/bunny-waf-dokploy-scripts/hetzner-firewall-update.sh)
 
 ### Configure IP List File Paths
 
