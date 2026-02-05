@@ -32,7 +32,11 @@ look around at the rules. The most important part is add an access list with you
 
 ![enter image description here](https://b.l3n.co/FxCeMi.png)
 ____
-ssh into your server, you need to only allow access to the server with bunny ips
+ssh into your server, you need to only allow access to the server with bunny ips, since we want all traffic to flow through the WAF.
+
+note bunny has these links with the list of updated ips https://support.bunny.net/hc/en-us/articles/115003578911-How-to-detect-when-BunnyCDN-PoP-servers-are-accessing-your-backend
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDc2OTM0MTM4LDE3NDMzNDExNjJdfQ==
+eyJoaXN0b3J5IjpbLTE1ODczOTYxNjIsMTc0MzM0MTE2Ml19
 -->
