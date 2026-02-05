@@ -47,13 +47,16 @@ add an ip from here as placeholder for port 80/443 https://bunnycdn.com/api/syst
 
 Hetzner sets the firewall rules in an api call but it limits to  500 ips per request, even though the firewall holds more, we can't append to it, so each request overrides all the rules.. which means we have to add the 9400 bunny ips to multiple firewalls. 
 
-**make sure your main firewall doesnt have 'any ip' for port 80/443** . I would only leave those open and let traefik proxy route to them. You can also leave port 22 for your ip only, but tailscale works without it.
+**make sure your main firewall doesnt have 'any ip' for port 80/443** . I would only leave those open and let traefik proxy route to them. You can also leave port 22 for your ip only, but tailscale works without it,
 apply these to your hetzner server running dokploy
 ___
 create a folder /etc/dokploy/cron-scripts
 
+    enter code here
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE1MzA1NDI2MCwzNTUxMDIzMzksMzM5Mj
-Y2NTc2LC0xNTczODA1NzQ0LC03NTI4NzI2NjIsLTE1ODczOTYx
-NjIsMTc0MzM0MTE2Miw0MTM1NTk5MjQsNjY3ODE2NTAyXX0=
+eyJoaXN0b3J5IjpbNDI3NTc1ODExLDExNTMwNTQyNjAsMzU1MT
+AyMzM5LDMzOTI2NjU3NiwtMTU3MzgwNTc0NCwtNzUyODcyNjYy
+LC0xNTg3Mzk2MTYyLDE3NDMzNDExNjIsNDEzNTU5OTI0LDY2Nz
+gxNjUwMl19
 -->
