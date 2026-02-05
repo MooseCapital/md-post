@@ -132,8 +132,11 @@ In the same file add
             certResolver: letsencrypt
         forwardedHeaders:
           insecure: true
-This is where the trustedIPs = ["127.0.0.1/32", "192.168.1.7"] array would go 
+This is where the trustedIPs = ["127.0.0.1/32", "192.168.1.7"] array would go if we were using, but for now use insecure. You must remember this since if you stop using bunny waf or any firewall in front, then any malicious users can forge 
+x-real-ip or this from traefik "Only IPs in `trustedIPs` will be authorized to trust the client forwarded headers (`X-Forwarded-*`)."  
+
+However, since we completely blocked acce
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkxMjU1MTc1NywtMTkxNjQ4NTg2OSwtND
+eyJoaXN0b3J5IjpbLTI1NTAyMTAyMiwtMTkxNjQ4NTg2OSwtND
 I4MDI0MzQ1LDI4NDA5OTQzNl19
 -->
