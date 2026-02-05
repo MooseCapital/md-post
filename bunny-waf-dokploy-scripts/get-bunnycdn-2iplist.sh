@@ -88,7 +88,6 @@ if ! download_and_validate "$IPV4_URL" "$IPV4_TMP" "$IPV4_FILE" "IPv4" "/32"; th
     IPV4_FAILED=1
 fi
 
-echo ""
 
 # Download IPv6 and add /128
 if ! download_and_validate "$IPV6_URL" "$IPV6_TMP" "$IPV6_FILE" "IPv6" "/128"; then
@@ -96,12 +95,14 @@ if ! download_and_validate "$IPV6_URL" "$IPV6_TMP" "$IPV6_FILE" "IPv6" "/128"; t
     IPV6_FAILED=1
 fi
 
-echo ""
+echo "Adding IP addresses to cscli allowlist..."
+#cscli allowlists add bunnycdn $(cat "$IPV4_FILE" "$IPV6_FILE" | tr '\n' ' ') -d "Bunny CDN Edge Servers"
+echo "✓ Complete!"
+#cscli allowlists list
 
 # Summary
 if [ -z "$IPV4_FAILED" ] && [ -z "$IPV6_FAILED" ]; then
     echo -e "${GREEN}✓ All IP lists updated successfully!${NC}"
-    echo ""
     echo "Output files:"
     echo "  IPv4: $IPV4_FILE"
     echo "  IPv6: $IPV6_FILE"
