@@ -24,8 +24,11 @@ Bunny has combined the services, so you need a pull zone, that has cdn, and the 
 In the sidebar:  CDN -> pullzone (one with my domain record) -> caching -> general
 here i set **cache expiration time** to "override do not cache" all traffic will hit our server, so only focus on waf for now.
 
-Also, since I'm using a wildcard * record. if i had CDN on, it would cache things from beszel.mysite.com and i would see it on ghost.mysite.com 
+Also, since I'm using a wildcard * record. if i had CDN on, it would cache things from beszel.mysite.com and i would see it on ghost.mysite.com 😲 ,
+to prevent that,  caching -> general -> vary cache -> check 'request hostname'  so different domains get different caches.
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc3NTU5MjEwNSw0MTM1NTk5MjQsNjY3OD
+eyJoaXN0b3J5IjpbMTc0MzM0MTE2Miw0MTM1NTk5MjQsNjY3OD
 E2NTAyXX0=
 -->
