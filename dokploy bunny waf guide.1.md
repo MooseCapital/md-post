@@ -11,10 +11,13 @@ This guide involves setting firewall rules at the hetzner network firewall level
 
 You can keep your current dns records. but bunny is a good free dns provider.
 
+I assume you already set up your dns zone in https://dash.bunny.net/dns/zones
+
+I made a wildcard record for ease, bunny has said they recently started ssl certs for those.
 
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc4NDM1OTMyOV19
+eyJoaXN0b3J5IjpbMjIyNDE0MzUzXX0=
 -->
