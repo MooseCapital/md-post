@@ -60,16 +60,98 @@ first cd into /etc/dokploy ..
     
     nano hetzner-firewall-update.sh
     chmod +x hetzner-firewall-update.sh
+    
 now 'ls' should show these files. before adding the scripts you need your api key from earlier, and your firewall id from hetzner,
 so make this api call in terminal to get the firewall Id's
 
- export HETZNER_API_TOKEN='key_here'
-    curl -H "Authorization: Bearer $HETZNER_API_TOKEN" \
-  https://api.hetzner.cloud/v1/firewalls | jq '.firewalls[] | {id: .id, name: .name}'
+     export HETZNER_API_TOKEN='key_here'
+        curl -H "Authorization: Bearer $HETZNER_API_TOKEN" \
+      https://api.hetzner.cloud/v1/firewalls | jq '.firewalls[] | {id: .id, name: .name}'
 
 write down the firewall id's
 ___
+now edit the get-bunnycdn-2iplist sh file and paste code from here https://github.com/MooseCapital/md-post/blob/main/bunny-waf-dokploy-scripts/get-bunnycdn-2iplist.sh
 
+edit hetzner-firewall-update sh file and paste code from here, but you will need to edit it with your hetzner api key and those 3 firewalls ids so it can call them with the ip list!
+https://github.com/MooseCapital/md-post/blob/main/bunny-waf-dokploy-scripts/hetzner-firewall-update.sh
+
+**make note of the directory its saving the ip list files to**
+
+    IPV4_FILE="/var/lib/crowdsec/data/bunnycdn_ipv4.txt"
+    IPV6_FILE="/var/lib/crowdsec/data/bunnycdn_ipv6.txt"
+
+since I'm using crowdsec, it will create a whitelist from the files there and I add them to an allowlist, that is for a separate crowdsec tutorial. If your not using crowdsec, then simply change the directory of the ip file in both scripts to
+
+    /etc/dokploy/cron-scripts/bunnycdn_ipv4.txt
+    /etc/dokploy/cron-scripts/bunnycdn_ipv6.txt
+
+if you are using crowdsec, then create an allowlist called 'bunnycdn' and uncomment these lines:
+
+    #cscli allowlists add bunnycdn $(cat "$IPV4_FILE" "$IPV6_FILE" | tr '\n' ' ') -d "Bunny CDN Edge Servers"
+    #cscli allowlists list
+
+___
+create a cronjob to run these
+type crontab -e
+scroll down and add these scripts:
+0 14 * * * /etc/dokploy/cron-scripts/get-bunnycdn-2iplist.sh >> /var/log/bunnycdn-allowlist.log 2>&1
+0 15 * * * /etc/dokploy/cron-scripts/hetzner-firewall-update.sh  >> /var/log/bunnycdn-allowlist.log 2>&1
+
+___
+In traefik we have 2 options, or more I don't know about.To get the users real ip behind a proxy. we can add an array of trusted Ip's or simple turn on insecure mode https://doc.traefik.io/traefik/v1.4/configuration/entrypoints/#proxyprotocol
+Note bunny has 940 Ips.. 🙃 and cloudfare has less than 20. We could have a script do it, but something could go wrong messing with our main static traefik config file. So I opt for insecure mode. we also need logs turned on.
+
+In dokploy panel -> traefik file system -> traefik.yml
+insert log after global
+
+    global:
+      sendAnonymousUsage: false
+    log:
+      level: info
+    accessLog:
+      format: common
+      fields:
+        headers:
+          defaultMode: keep
+you should be able to see traefik logs with this command after restarting traefik container.
+docker logs --tail 20 dokploy-traefik
+
+In the same file add
+
+    entryPoints:
+      web:
+        address: :80
+        forwardedHeaders:
+          insecure: true
+      websecure:
+        address: :443
+        http3:
+          advertisedPort: 443
+        http:
+          tls:
+            certResolver: letsencrypt
+        forwardedHeaders:
+          insecure: true
+This is where the trustedIPs = ["127.0.0.1/32", "192.168.1.7"] array would go if we were using, but for now use insecure. You must remember this since if you stop using bunny waf or any firewall in front, then any malicious users can forge 
+x-real-ip or this from traefik "Only IPs in `trustedIPs` will be authorized to trust the client forwarded headers (`X-Forwarded-*`)."  
+
+However, since we completely blocked access to our server except bunny, then I know all request come from bunny, and bunny waf will pass along the real users ip. If I don't turn on this insecure mode or add trusted Ip's then traefik logs will only show bunny's ips. and my crowdsec parser will only see bunny ip's in the traefik logs so it won't ever ban any users for malicious request since I added all 940 bunny ips to crowdsec allowlist.
+
+I haven't tried using iptables yet, but hetzner could stop this api with lower limits at any time so just monitor your logs to know. I hope someone makes a guide to add these to iptables. Many people might be on a vps provider that doesn't have a network level firewall, so this is needed.
+
+we could have forgone using firewall altogether, and allow any ip to port 80/443 and use traefik for blocking, https://doc.traefik.io/traefik/reference/routing-configuration/http/middlewares/ipallowlist/
+However traefik blocks far less per second than the firewall can. When people say their service is being attacked, it usually means they didn't think about any security beforehand. And a traefik blocker wouldn't have saved them, but a firewall could, since bunny can just turn on expert level bot fight mode.
+
+## Crowdsec vs Bunny waf
+I'm no expert on setting up a firewall, It comes down to do you want to worry about your own security or offload that to an external  Web access firewall. At first I didn't know  crowdsec is meant to be your only firewall and you might need some traefik plugins like owasp 10 rule protector to match the abilities of some wafs with lots of features. But crowdsec wasn't meant to be behind this proxy in the first place, meaning we wouldn't have to turn on insecure mode or add trusted ip's to traefik forwardedHeaders. So I made it a lot more complex when I basically added 2 firewalls, and bunny made it more complex by not having < 20 ips like cloudfare, but having 940.
+
+Most of us are here self hosting a vps since we don't want to become a story here https://serverlesshorrors.com 
+To me, the waf is cheap enough, since your paying per million request. The real money is paying 10x more for cpu and bandwidth, the cheapest paas bandwidth is $50 per TB, other than digital ocean at $20. https://getdeploying.com/reference/data-egress
+
+Crowdsec is easy enough to setup but another thing to worry about, plus all the other things we would need to replicate bunny's waf that is less than $1 per million request.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjg0MDk5NDM2XX0=
+eyJoaXN0b3J5IjpbMTcxMzIyODY1LDgzNzI1NTc3Myw2ODYzMj
+k5MDMsLTE0MzgyODEwODAsOTY0MzE2MTgyLC00NDAyNzIzNzEs
+LTEwNDM3Mjc0MDEsLTE5MTY0ODU4NjksLTQyODAyNDM0NSwyOD
+QwOTk0MzZdfQ==
 -->
