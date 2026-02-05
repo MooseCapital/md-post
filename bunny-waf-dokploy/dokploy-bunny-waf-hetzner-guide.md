@@ -93,7 +93,9 @@ scroll down and add these scripts:
 0 14 * * * /etc/dokploy/cron-scripts/get-bunnycdn-2iplist.sh >> /var/log/bunnycdn-allowlist.log 2>&1
 0 15 * * * /etc/dokploy/cron-scripts/hetzner-firewall-update.sh  >> /var/log/bunnycdn-allowlist.log 2>&1
 
+___
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk2NDU5MzQzLC00MjgwMjQzNDUsMjg0MD
-k5NDM2XX0=
+eyJoaXN0b3J5IjpbLTE2ODQyMDA5NTQsLTQyODAyNDM0NSwyOD
+QwOTk0MzZdfQ==
 -->
