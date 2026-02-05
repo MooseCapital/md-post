@@ -69,7 +69,8 @@ so make this api call in terminal to get the firewall Id's
 
 write down the firewall id's
 ___
+now edit the get-bunnycdn-2iplist.sh file and paste code from here https://github.com/MooseCapital/md-post/blob/main/bunny-waf-dokploy-scripts/get-bunnycdn-2iplist.sh
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjg0MDk5NDM2XX0=
+eyJoaXN0b3J5IjpbMTY5MjY4Mjg2NSwyODQwOTk0MzZdfQ==
 -->
