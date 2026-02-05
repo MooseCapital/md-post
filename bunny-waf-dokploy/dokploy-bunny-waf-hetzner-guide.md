@@ -95,8 +95,9 @@ scroll down and add these scripts:
 
 ___
 In traefik we have 2 options, or more I don't know about.To get the users real ip behind a proxy. we can add an array of trusted Ip's or simple turn on insecure mode https://doc.traefik.io/traefik/v1.4/configuration/entrypoints/#proxyprotocol
-Note bunny has 940 Ips.. 🙃 and cloudfare has less than 20. We could have a script do it, but something could go wrong messing with our main st
+Note bunny has 940 Ips.. 🙃 and cloudfare has less than 20. We could have a script do it, but something could go wrong messing with our main static traefik config file. So I opt for insecure mode. we also need logs turned on.
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE2MzgyNzQ1MCwtMTkxNjQ4NTg2OSwtND
+eyJoaXN0b3J5IjpbLTE1NDU1NjQyNiwtMTkxNjQ4NTg2OSwtND
 I4MDI0MzQ1LDI4NDA5OTQzNl19
 -->
