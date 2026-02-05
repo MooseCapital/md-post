@@ -43,8 +43,9 @@ Go to the Hetzner console
 on the side, scroll down to security -> API tokens -> generate a token and save it in password manager.
 go to firewalls -> create firewalls -> 
 create 3 firewalls, bunnycdn1, bunnycdn2, bunnycdn3
-Hetzner sets the firewall rules in an api call but it limits to  500 ips
+Hetzner sets the firewall rules in an api call but it limits to  500 ips per request, even though the firewall holds more, we can't append to it, so each request overrides all the rules.. which means we have to add the 900 bunny ips to multiple firewalls. 
+make sure 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgxOTA5NDg4NiwzMzkyNjY1NzYsLTc1Mj
-g3MjY2MiwtMTU4NzM5NjE2MiwxNzQzMzQxMTYyXX0=
+eyJoaXN0b3J5IjpbNzE4NzIxNTYyLDMzOTI2NjU3NiwtNzUyOD
+cyNjYyLC0xNTg3Mzk2MTYyLDE3NDMzNDExNjJdfQ==
 -->
