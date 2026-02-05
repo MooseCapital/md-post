@@ -79,7 +79,9 @@ https://github.com/MooseCapital/md-post/blob/main/bunny-waf-dokploy-scripts/hetz
 IPV4_FILE="/var/lib/crowdsec/data/bunnycdn_ipv4.txt"
 IPV6_FILE="/var/lib/crowdsec/data/bunnycdn_ipv6.txt"
 
-since I'm using crowdsec, it will create a whitelist from the files there and I add them to an allowlist. If your not using crowdsec, then simply
+since I'm using crowdsec, it will create a whitelist from the files there and I add them to an allowlist. If your not using crowdsec, then simply change the directory of the ip file in both scripts to
+/etc/dokploy/cron-scripts/bunnycdn_ipv4.txt
+/etc/dokploy/cron-scripts/bunnycdn_ipv6.txt
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg1NTM5NDQyNCwyODQwOTk0MzZdfQ==
+eyJoaXN0b3J5IjpbMTQ1NjAwNzQ0MiwyODQwOTk0MzZdfQ==
 -->
