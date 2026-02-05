@@ -69,8 +69,12 @@ so make this api call in terminal to get the firewall Id's
 
 write down the firewall id's
 ___
-now edit the get-bunnycdn-2iplist.sh file and paste code from here https://github.com/MooseCapital/md-post/blob/main/bunny-waf-dokploy-scripts/get-bunnycdn-2iplist.sh
+now edit the get-bunnycdn-2iplist sh file and paste code from here https://github.com/MooseCapital/md-post/blob/main/bunny-waf-dokploy-scripts/get-bunnycdn-2iplist.sh
 
+edit hetzner-firewall-update sh file and paste code from here, but you will need to edit it with your hetzner api key and those 3 firewalls ids so it can call them with the ip list!
+https://github.com/MooseCapital/md-post/blob/main/bunny-waf-dokploy-scripts/hetzner-firewall-update.sh
+
+**make not of the directory its s**
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY5MjY4Mjg2NSwyODQwOTk0MzZdfQ==
+eyJoaXN0b3J5IjpbNjI3MTkzNTQ0LDI4NDA5OTQzNl19
 -->
