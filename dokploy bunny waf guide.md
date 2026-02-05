@@ -50,9 +50,10 @@ Hetzner sets the firewall rules in an api call but it limits to  500 ips per req
 **make sure your main firewall doesnt have 'any ip' for port 80/443** . I would only leave those open and let traefik proxy route to them. You can also leave port 22 for your ip only, but tailscale works without it.
 apply these to your hetzner server running dokploy
 ___
+create a folder /etc/dokploy/cron-scripts
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MTQ1MDc4MDcsMzU1MTAyMzM5LDMzOT
-I2NjU3NiwtMTU3MzgwNTc0NCwtNzUyODcyNjYyLC0xNTg3Mzk2
-MTYyLDE3NDMzNDExNjIsNDEzNTU5OTI0LDY2NzgxNjUwMl19
+eyJoaXN0b3J5IjpbMTE1MzA1NDI2MCwzNTUxMDIzMzksMzM5Mj
+Y2NTc2LC0xNTczODA1NzQ0LC03NTI4NzI2NjIsLTE1ODczOTYx
+NjIsMTc0MzM0MTE2Miw0MTM1NTk5MjQsNjY3ODE2NTAyXX0=
 -->
