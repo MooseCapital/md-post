@@ -63,9 +63,9 @@ first cd into /etc/dokploy ..
 now 'ls' should show these files. before adding the scripts you need your api key from earlier, and your firewall id from hetzner,
 so make this api call in terminal to get the firewall Id's
 
- export HETZNER_API_TOKEN='key_here'
-    curl -H "Authorization: Bearer $HETZNER_API_TOKEN" \
-  https://api.hetzner.cloud/v1/firewalls | jq '.firewalls[] | {id: .id, name: .name}'
+     export HETZNER_API_TOKEN='key_here'
+        curl -H "Authorization: Bearer $HETZNER_API_TOKEN" \
+      https://api.hetzner.cloud/v1/firewalls | jq '.firewalls[] | {id: .id, name: .name}'
 
 write down the firewall id's
 ___
@@ -76,16 +76,19 @@ https://github.com/MooseCapital/md-post/blob/main/bunny-waf-dokploy-scripts/hetz
 
 **make note of the directory its saving the ip list files to**
 
-IPV4_FILE="/var/lib/crowdsec/data/bunnycdn_ipv4.txt"
-IPV6_FILE="/var/lib/crowdsec/data/bunnycdn_ipv6.txt"
+    IPV4_FILE="/var/lib/crowdsec/data/bunnycdn_ipv4.txt"
+    IPV6_FILE="/var/lib/crowdsec/data/bunnycdn_ipv6.txt"
 
 since I'm using crowdsec, it will create a whitelist from the files there and I add them to an allowlist, that is for a separate crowdsec tutorial. If your not using crowdsec, then simply change the directory of the ip file in both scripts to
-/etc/dokploy/cron-scripts/bunnycdn_ipv4.txt
-/etc/dokploy/cron-scripts/bunnycdn_ipv6.txt
+
+    /etc/dokploy/cron-scripts/bunnycdn_ipv4.txt
+    /etc/dokploy/cron-scripts/bunnycdn_ipv6.txt
 
 if you are using crowdsec, then create an allowlist called 'bunnycdn' and uncomment these lines:
-#cscli allowlists add bunnycdn $(cat "$IPV4_FILE" "$IPV6_FILE" | tr '\n' ' ') -d "Bunny CDN Edge Servers"
-#cscli allowlists list
+
+    #cscli allowlists add bunnycdn $(cat "$IPV4_FILE" "$IPV6_FILE" | tr '\n' ' ') -d "Bunny CDN Edge Servers"
+    #cscli allowlists list
+
 ___
 create a cronjob to run these
 type crontab -e
@@ -97,7 +100,20 @@ ___
 In traefik we have 2 options, or more I don't know about.To get the users real ip behind a proxy. we can add an array of trusted Ip's or simple turn on insecure mode https://doc.traefik.io/traefik/v1.4/configuration/entrypoints/#proxyprotocol
 Note bunny has 940 Ips.. 🙃 and cloudfare has less than 20. We could have a script do it, but something could go wrong messing with our main static traefik config file. So I opt for insecure mode. we also need logs turned on.
 
+In dokploy panel -> traefik file system -> traefik.yml
+insert logs after global:
+
+    global:
+      sendAnonymousUsage: false
+    log:
+      level: info
+    accessLog:
+      format: common
+      fields:
+        headers:
+          defaultMode: keep
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NDU1NjQyNiwtMTkxNjQ4NTg2OSwtND
+eyJoaXN0b3J5IjpbLTU0ODgxMjM3NSwtMTkxNjQ4NTg2OSwtND
 I4MDI0MzQ1LDI4NDA5OTQzNl19
 -->
