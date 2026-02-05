@@ -54,12 +54,19 @@ create a folder /etc/dokploy/cron-scripts
 first cd into /etc/dokploy ..
 
     mkdir cron-scripts
-    nano get
+    nano get-bunnycdn-2iplist.sh
+    #to make it executable
+    chmod +x get-bunnycdn-2iplist.sh 
+    
+    nano hetzner-firewall-update.sh
+    chmod +x hetzner-firewall-update.sh
+now 'ls' should show these files. before adding the scripts you need your api key from earlier, and your firewall id from hetzner,
+so make this test api call
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY0ODUxNjYyNywxMTUzMDU0MjYwLDM1NT
-EwMjMzOSwzMzkyNjY1NzYsLTE1NzM4MDU3NDQsLTc1Mjg3MjY2
-MiwtMTU4NzM5NjE2MiwxNzQzMzQxMTYyLDQxMzU1OTkyNCw2Nj
-c4MTY1MDJdfQ==
+eyJoaXN0b3J5IjpbODQwMzk5NjgyLDExNTMwNTQyNjAsMzU1MT
+AyMzM5LDMzOTI2NjU3NiwtMTU3MzgwNTc0NCwtNzUyODcyNjYy
+LC0xNTg3Mzk2MTYyLDE3NDMzNDExNjIsNDEzNTU5OTI0LDY2Nz
+gxNjUwMl19
 -->
