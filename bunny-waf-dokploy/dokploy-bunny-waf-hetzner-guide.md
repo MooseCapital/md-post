@@ -137,7 +137,10 @@ x-real-ip or this from traefik "Only IPs in `trustedIPs` will be authorized to t
 
 However, since we completely blocked access to our server except bunny, then I know all request come from bunny, and bunny waf will pass along the real users ip. If I don't turn on this insecure mode or add trusted Ip's then traefik logs will only show bunny's ips. and my crowdsec parser will only see bunny ip's in the traefik logs so it won't ever ban any users for malicious request since I added all 940 bunny ips to crowdsec allowlist.
 
-I haven't tried using iptables yet, but hetzner could stop this api with lower limits at any time so just monitor your logs and keep your server safe.
+I haven't tried using iptables yet, but hetzner could stop this api with lower limits at any time so just monitor your logs to know. I hope someone makes a guide to add these to iptables. 
+
+we could have forgone using firewall altogether, and allow any ip to port 80/443 and use traefik for blocking, https://doc.traefik.io/traefik/reference/routing-configuration/http/middlewares/ipallowlist/
+However
 
 ## Crowdsec vs Bunny waf
 I'm no expert on setting up a firewall, It comes down to do you want to worry about your own security or offload that to an external  Web access firewall. At first I didn't know  crowdsec is meant to be your only firewall and you might need some traefik plugins like owasp 10 rule protector to match the abilities of some wafs with lots of features. But crowdsec wasn't meant to be behind this proxy in the first place, meaning we wouldn't have to turn on insecure mode or add trusted ip's to traefik forwardedHeaders. So I made it a lot more complex when I basically added 2 firewalls, and bunny made it more complex by not having < 20 ips like cloudfare, but having 940.
@@ -147,7 +150,8 @@ To me, the waf is cheap enough, since your paying per million request. The real 
 
 Crowdsec is easy enough to setup but another thing to worry about, plus all the other things we would need
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjg2MzI5OTAzLC0xNDM4MjgxMDgwLDk2ND
-MxNjE4MiwtNDQwMjcyMzcxLC0xMDQzNzI3NDAxLC0xOTE2NDg1
-ODY5LC00MjgwMjQzNDUsMjg0MDk5NDM2XX0=
+eyJoaXN0b3J5IjpbMTQ0NDczMDU3NSw2ODYzMjk5MDMsLTE0Mz
+gyODEwODAsOTY0MzE2MTgyLC00NDAyNzIzNzEsLTEwNDM3Mjc0
+MDEsLTE5MTY0ODU4NjksLTQyODAyNDM0NSwyODQwOTk0MzZdfQ
+==
 -->
