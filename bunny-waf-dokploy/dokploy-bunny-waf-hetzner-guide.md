@@ -143,9 +143,9 @@ I haven't tried using iptables yet, but hetzner could stop this api with lower l
 I'm no expert on setting up a firewall, It comes down to do you want to worry about your own security or offload that to an external  Web access firewall. At first I didn't know  crowdsec is meant to be your only firewall and you might need some traefik plugins like owasp 10 rule protector to match the abilities of some wafs with lots of features. But crowdsec wasn't meant to be behind this proxy in the first place, meaning we wouldn't have to turn on insecure mode or add trusted ip's to traefik forwardedHeaders. So I made it a lot more complex when I basically added 2 firewalls, and bunny made it more complex by not having < 20 ips like cloudfare, but having 940.
 
 Most of us are here self hosting a vps since we don't want to become a story here https://serverlesshorrors.com 
-To me, the waf is cheap enough, since your paying per million request.
+To me, the waf is cheap enough, since your paying per million request. The real money is paying 10x more for cpu and bandwidth, the cheapest paas bandwidth is $50 per TB, other than digital ocean at $20. https://getdeploying.com/reference/data-egress
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTY0MzE2MTgyLC00NDAyNzIzNzEsLTEwND
-M3Mjc0MDEsLTE5MTY0ODU4NjksLTQyODAyNDM0NSwyODQwOTk0
-MzZdfQ==
+eyJoaXN0b3J5IjpbLTE0MzgyODEwODAsOTY0MzE2MTgyLC00ND
+AyNzIzNzEsLTEwNDM3Mjc0MDEsLTE5MTY0ODU4NjksLTQyODAy
+NDM0NSwyODQwOTk0MzZdfQ==
 -->
