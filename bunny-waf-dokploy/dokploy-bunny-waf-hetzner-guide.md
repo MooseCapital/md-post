@@ -135,8 +135,11 @@ In the same file add
 This is where the trustedIPs = ["127.0.0.1/32", "192.168.1.7"] array would go if we were using, but for now use insecure. You must remember this since if you stop using bunny waf or any firewall in front, then any malicious users can forge 
 x-real-ip or this from traefik "Only IPs in `trustedIPs` will be authorized to trust the client forwarded headers (`X-Forwarded-*`)."  
 
-However, since we completely blocked access to our server except bunny, then I know all request come from bunny, and bunny waf will send the real users ip.
+However, since we completely blocked access to our server except bunny, then I know all request come from bunny, and bunny waf will pass along the real users ip. If I don't turn on this insecure mode or add trusted Ip's then traefik logs will only show bunny's ips. and my crowdsec parser will only see bunny ip's in the traefik logs so it won't ever ban any users for malicious request since I added all 940 bunny ips to crowdsec allowlist.
+
+## Crowdsec vs Bunny waf
+I'm no e
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNDM3Mjc0MDEsLTE5MTY0ODU4NjksLT
-QyODAyNDM0NSwyODQwOTk0MzZdfQ==
+eyJoaXN0b3J5IjpbLTIwNTUyMzc0NiwtMTA0MzcyNzQwMSwtMT
+kxNjQ4NTg2OSwtNDI4MDI0MzQ1LDI4NDA5OTQzNl19
 -->
