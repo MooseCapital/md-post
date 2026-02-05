@@ -102,7 +102,8 @@ In traefik we have 2 options, or more I don't know about.To get the users real i
 Note bunny has 940 Ips.. 🙃 and cloudfare has less than 20. We could have a script do it, but something could go wrong messing with our main static traefik config file. So I opt for insecure mode. we also need logs turned on.
 
 In dokploy panel -> traefik file system -> traefik.yml
-insert log after global,
+insert log after global, you should be able to see traefik logs with this command aft
+docker logs --tail 20 dokploy-traefik
 
     global:
       sendAnonymousUsage: false
@@ -115,6 +116,6 @@ insert log after global,
           defaultMode: keep
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYxODMxMTA0MCwtMTkxNjQ4NTg2OSwtND
+eyJoaXN0b3J5IjpbLTk1MjQ0NjUxMCwtMTkxNjQ4NTg2OSwtND
 I4MDI0MzQ1LDI4NDA5OTQzNl19
 -->
