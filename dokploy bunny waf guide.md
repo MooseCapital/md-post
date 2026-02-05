@@ -31,7 +31,9 @@ In shield, you will need to turn it on, free plan is fine.
 look around at the rules. The most important part is add an access list with your ip and select 'bypass' in the dropdown. so you are never blocked accessing your hosted services.
 
 ![enter image description here](https://b.l3n.co/FxCeMi.png)
+____
+ssh into your server, you need to only allow access to the server with bunny ips, sinc
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjExMDc4MDI2NCwxNzQzMzQxMTYyLDQxMz
-U1OTkyNCw2Njc4MTY1MDJdfQ==
+eyJoaXN0b3J5IjpbNDUyOTIxMTc5LDE3NDMzNDExNjIsNDEzNT
+U5OTI0LDY2NzgxNjUwMl19
 -->
