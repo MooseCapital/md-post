@@ -17,10 +17,10 @@ I made a wildcard record for ease, bunny has said they recently started ssl cert
 
 Make sure to click 'cdn acceleration' 
 https://support.bunny.net/hc/en-us/articles/21123161178396-What-is-CDN-Acceleration-and-how-to-enable-it
-**If you have your own dns provider, you will have to create a CNAME record and point to the pull zone**
+**If you have your own dns provider, you will have to create a CNAME record and point to the pull zone your create** cdn acceleration does this
 ![enter image description here](https://c.l3n.co/FxCKb1.png)
 
-
+c
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNjgxNjQ5MjJdfQ==
+eyJoaXN0b3J5IjpbMjgxOTIxMjMyXX0=
 -->
