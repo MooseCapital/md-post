@@ -38,9 +38,12 @@ ssh into your server, you need to only allow access to the server with bunny ips
 note bunny has these links with the list of updated ips https://support.bunny.net/hc/en-us/articles/115003578911-How-to-detect-when-BunnyCDN-PoP-servers-are-accessing-your-backend
 
 Check this guide someone made, its basically fetching cloudfares ip list, and calling hetzners api which adds these ips to a firewall rule, and that firewall is applied to the server. This is what will happen, but just with bunny. https://community.hetzner.com/tutorials/cloudflare-website-protect#step-4---setting-up-hetzner-cloud-firewall
-___ since
+___ 
+Go to the Hetzner console
+on the side, scroll down to security -> API tokens -> generate a token and save it in password manager.
+go to firewalls -> create firewalls -> 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NzM4MDU3NDQsLTc1Mjg3MjY2MiwtMT
-U4NzM5NjE2MiwxNzQzMzQxMTYyXX0=
+eyJoaXN0b3J5IjpbMzM5MjY2NTc2LC03NTI4NzI2NjIsLTE1OD
+czOTYxNjIsMTc0MzM0MTE2Ml19
 -->
