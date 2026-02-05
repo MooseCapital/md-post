@@ -28,8 +28,10 @@ Also, since I'm using a wildcard * record. if i had CDN on, it would cache thing
 to prevent that,  caching -> general -> vary cache -> check 'request hostname'  so different domains get different caches.
 _____
 In shield, you will need to turn it on, free plan is fine.
-look around at the rules. The most important part is add an access list with your ip
+look around at the rules. The most important part is add an access list with your ip and select 'bypass' in the dropdown. so you are never blocked accessing your hosted services.
+
+![enter image description here](https://b.l3n.co/FxCeMi.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA3Mjc4OTU2MCwxNzQzMzQxMTYyLDQxMz
+eyJoaXN0b3J5IjpbMjExMDc4MDI2NCwxNzQzMzQxMTYyLDQxMz
 U1OTkyNCw2Njc4MTY1MDJdfQ==
 -->
