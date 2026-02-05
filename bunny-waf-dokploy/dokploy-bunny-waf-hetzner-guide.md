@@ -85,11 +85,15 @@ since I'm using crowdsec, it will create a whitelist from the files there and I 
 
 if you are using crowdsec, then create an allowlist called 'bunnycdn' and uncomment these lines:
 #cscli allowlists add bunnycdn $(cat "$IPV4_FILE" "$IPV6_FILE" | tr '\n' ' ') -d "Bunny CDN Edge Servers"
-echo "✓ Complete!"
 #cscli allowlists list
 ___
+create a cronjob to run these
+type crontab -e
+scroll down and add these scripts:
+0 14 * * * /etc/dokploy/cron-scripts/get-bunnycdn-2iplist.sh >> /var/log/bunnycdn-allowlist.log 2>&1
+0 15 * * * /etc/dokploy/cron-scripts/hetzner-firewall-update.sh  >> /var/log/bunnycdn-allowlist.log 2>&1
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NDIzMjM0NTEsLTQyODAyNDM0NSwyOD
-QwOTk0MzZdfQ==
+eyJoaXN0b3J5IjpbMTk2NDU5MzQzLC00MjgwMjQzNDUsMjg0MD
+k5NDM2XX0=
 -->
