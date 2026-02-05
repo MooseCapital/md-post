@@ -29,7 +29,7 @@ Make sure to click 'CDN acceleration' for your DNS records.
 
 **If you have your own DNS provider**, you'll need to create a CNAME record and point to the pull zone you create. CDN acceleration does this for us automatically when we use Bunny DNS.
 
-![enter image description here](https://c.l3n.co/FxCKb1.png)
+![enter image description here](https://wsrv.nl/?url=https://c.l3n.co/FxCKb1.png)
 
 ## Part 2: Pull Zone Configuration
 
@@ -41,7 +41,7 @@ Navigate to: **Sidebar → CDN → Pull Zone (the one with your domain record) �
 
 Here I set **Cache Expiration Time** to "override do not cache" so all traffic will hit our server. For now, we're focusing only on the WAF.
 
-![enter image description here](https://c.l3n.co/FxCSdm.png)
+![enter image description here](https://wsrv.nl/?url=https://c.l3n.co/FxCSdm.png)
 
 ### Important for Wildcard Records
 
@@ -262,5 +262,6 @@ To me, the WAF is cheap enough since you're paying per million requests. The rea
 Crowdsec is easy enough to set up but another thing to worry about, plus all the other things we would need to replicate Bunny's WAF that is less than $1 per million requests.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1OTQ2OTA1MTZdfQ==
+eyJoaXN0b3J5IjpbLTE0MzMxNzA4MDgsLTE1OTQ2OTA1MTZdfQ
+==
 -->
