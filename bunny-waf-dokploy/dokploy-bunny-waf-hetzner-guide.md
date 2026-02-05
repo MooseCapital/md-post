@@ -79,7 +79,7 @@ https://github.com/MooseCapital/md-post/blob/main/bunny-waf-dokploy-scripts/hetz
 IPV4_FILE="/var/lib/crowdsec/data/bunnycdn_ipv4.txt"
 IPV6_FILE="/var/lib/crowdsec/data/bunnycdn_ipv6.txt"
 
-since I'm using crowdsec, it will create a whitelist
+since I'm using crowdsec, it will create a whitelist from the files there and I add them to an allowlist. If your not using crowdsec, then simply
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNDI4Nzg1MTQsMjg0MDk5NDM2XX0=
+eyJoaXN0b3J5IjpbMTg1NTM5NDQyNCwyODQwOTk0MzZdfQ==
 -->
