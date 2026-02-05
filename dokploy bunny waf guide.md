@@ -5,9 +5,10 @@ What you need
 
  1. bunny.net account 
  2. hetzner vps server*emphasized text*
+ 3. a domain
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjY3ODE2NTAyXX0=
+eyJoaXN0b3J5IjpbLTI0NTcxMjc3Miw2Njc4MTY1MDJdfQ==
 -->
