@@ -74,7 +74,12 @@ now edit the get-bunnycdn-2iplist sh file and paste code from here https://githu
 edit hetzner-firewall-update sh file and paste code from here, but you will need to edit it with your hetzner api key and those 3 firewalls ids so it can call them with the ip list!
 https://github.com/MooseCapital/md-post/blob/main/bunny-waf-dokploy-scripts/hetzner-firewall-update.sh
 
-**make not of the directory its s**
+**make note of the directory its saving the ip list files to**
+
+IPV4_FILE="/var/lib/crowdsec/data/bunnycdn_ipv4.txt"
+IPV6_FILE="/var/lib/crowdsec/data/bunnycdn_ipv6.txt"
+
+since I'm using crowdsec, it will create a whitelist
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjI3MTkzNTQ0LDI4NDA5OTQzNl19
+eyJoaXN0b3J5IjpbLTEzNDI4Nzg1MTQsMjg0MDk5NDM2XX0=
 -->
