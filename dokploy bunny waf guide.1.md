@@ -7,10 +7,14 @@ What you need
  2. hetzner vps server*emphasized text*
  3. a domain
 
-This guide involves setting firewall rules at the hetzner network firewall level before it reaches the server. trying to get iptables to work with docker is complex
+This guide involves setting firewall rules at the hetzner network firewall level before it reaches the server. If your server provider has a network firewall, you may be able to add this many ips but we are adding lots of rules, and scripts will have to be modified.
+
+You can keep your current dns records. but bunny is a good free dns provider.
+
+
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NDA0NTY4OTRdfQ==
+eyJoaXN0b3J5IjpbLTc4NDM1OTMyOV19
 -->
