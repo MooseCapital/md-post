@@ -63,10 +63,11 @@ first cd into /etc/dokploy ..
 now 'ls' should show these files. before adding the scripts you need your api key from earlier, and your firewall id from hetzner,
 so make this test api call
 
+    enter code here
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODQwMzk5NjgyLDExNTMwNTQyNjAsMzU1MT
-AyMzM5LDMzOTI2NjU3NiwtMTU3MzgwNTc0NCwtNzUyODcyNjYy
-LC0xNTg3Mzk2MTYyLDE3NDMzNDExNjIsNDEzNTU5OTI0LDY2Nz
-gxNjUwMl19
+eyJoaXN0b3J5IjpbLTEwOTQ0NDE1NjMsMTE1MzA1NDI2MCwzNT
+UxMDIzMzksMzM5MjY2NTc2LC0xNTczODA1NzQ0LC03NTI4NzI2
+NjIsLTE1ODczOTYxNjIsMTc0MzM0MTE2Miw0MTM1NTk5MjQsNj
+Y3ODE2NTAyXX0=
 -->
