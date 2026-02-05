@@ -51,12 +51,15 @@ Hetzner sets the firewall rules in an api call but it limits to  500 ips per req
 apply these to your hetzner server running dokploy
 ___
 create a folder /etc/dokploy/cron-scripts
+first cd into /etc/dokploy ..
 
-    enter code here
+    mkdir cron-scripts
+    nano get
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDI3NTc1ODExLDExNTMwNTQyNjAsMzU1MT
-AyMzM5LDMzOTI2NjU3NiwtMTU3MzgwNTc0NCwtNzUyODcyNjYy
-LC0xNTg3Mzk2MTYyLDE3NDMzNDExNjIsNDEzNTU5OTI0LDY2Nz
-gxNjUwMl19
+eyJoaXN0b3J5IjpbLTY0ODUxNjYyNywxMTUzMDU0MjYwLDM1NT
+EwMjMzOSwzMzkyNjY1NzYsLTE1NzM4MDU3NDQsLTc1Mjg3MjY2
+MiwtMTU4NzM5NjE2MiwxNzQzMzQxMTYyLDQxMzU1OTkyNCw2Nj
+c4MTY1MDJdfQ==
 -->
