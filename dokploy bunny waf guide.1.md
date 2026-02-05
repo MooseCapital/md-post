@@ -1,6 +1,7 @@
 # Dokploy bunny.net waf guide on hetzner
 Why bunny and not cloudfare? because cloudfare does not give clear $ pricing per x million request and bandwidth. They are waiting to [trap you](https://www.reddit.com/r/CloudFlare/comments/1oa4lut/does_cloudflare_really_not_charge_for/nk73eka/) once you are locked into their proprietary tools. Give this a watch: https://youtu.be/8zj7ei5Egk8
 
+This is a great way to offload our security to a provider thats fairly cheap and worry about dev. Since I'm using the free tier, I still have crowdsec running on my server. Crowdsec seems to catch a lot passing through the waf, but the detection on free tier isnt as good as features in premium/business.
 What you need
 
  1. bunny.net account (you get free trial, no card required)
@@ -38,5 +39,6 @@ note bunny has these links with the list of updated ips https://support.bunny.ne
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1ODczOTYxNjIsMTc0MzM0MTE2Ml19
+eyJoaXN0b3J5IjpbMTUxNTc5ODMzNSwtMTU4NzM5NjE2MiwxNz
+QzMzQxMTYyXX0=
 -->
