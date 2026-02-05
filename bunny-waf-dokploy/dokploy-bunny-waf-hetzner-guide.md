@@ -116,8 +116,24 @@ insert log after global
 you should be able to see traefik logs with this command after restarting traefik container.
 docker logs --tail 20 dokploy-traefik
 
-In the same file 
+In the same file add
+
+    entryPoints:
+      web:
+        address: :80
+        forwardedHeaders:
+          insecure: true
+      websecure:
+        address: :443
+        http3:
+          advertisedPort: 443
+        http:
+          tls:
+            certResolver: letsencrypt
+        forwardedHeaders:
+          insecure: true
+This is where the trustedIPs = ["127.0.0.1/32", "192.168.1.7"] array would go 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgwNjk3MjE4OSwtMTkxNjQ4NTg2OSwtND
+eyJoaXN0b3J5IjpbMTkxMjU1MTc1NywtMTkxNjQ4NTg2OSwtND
 I4MDI0MzQ1LDI4NDA5OTQzNl19
 -->
