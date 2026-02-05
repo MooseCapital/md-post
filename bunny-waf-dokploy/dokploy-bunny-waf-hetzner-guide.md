@@ -144,8 +144,10 @@ I'm no expert on setting up a firewall, It comes down to do you want to worry ab
 
 Most of us are here self hosting a vps since we don't want to become a story here https://serverlesshorrors.com 
 To me, the waf is cheap enough, since your paying per million request. The real money is paying 10x more for cpu and bandwidth, the cheapest paas bandwidth is $50 per TB, other than digital ocean at $20. https://getdeploying.com/reference/data-egress
+
+Crowdsec is easy enough to setup but another thing to worry about, plus all the other things we would need
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MzgyODEwODAsOTY0MzE2MTgyLC00ND
-AyNzIzNzEsLTEwNDM3Mjc0MDEsLTE5MTY0ODU4NjksLTQyODAy
-NDM0NSwyODQwOTk0MzZdfQ==
+eyJoaXN0b3J5IjpbNjg2MzI5OTAzLC0xNDM4MjgxMDgwLDk2ND
+MxNjE4MiwtNDQwMjcyMzcxLC0xMDQzNzI3NDAxLC0xOTE2NDg1
+ODY5LC00MjgwMjQzNDUsMjg0MDk5NDM2XX0=
 -->
