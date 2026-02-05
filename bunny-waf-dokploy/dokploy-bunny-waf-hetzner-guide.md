@@ -61,11 +61,14 @@ first cd into /etc/dokploy ..
     nano hetzner-firewall-update.sh
     chmod +x hetzner-firewall-update.sh
 now 'ls' should show these files. before adding the scripts you need your api key from earlier, and your firewall id from hetzner,
-so make this test api call
+so make this api call in terminal to get the firewall Id's
 
-    enter code here
+    export HETZNER_API_TOKEN='key_her'
+
+curl -H "Authorization: Bearer $HETZNER_API_TOKEN" \
+  https://api.hetzner.cloud/v1/firewalls | jq '.firewalls[] | {id: .id, name: .name}'
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAzNzg4ODEzOV19
+eyJoaXN0b3J5IjpbNTM4Mjc4MjQxXX0=
 -->
