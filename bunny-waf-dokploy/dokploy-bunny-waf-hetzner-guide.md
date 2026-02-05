@@ -94,8 +94,8 @@ scroll down and add these scripts:
 0 15 * * * /etc/dokploy/cron-scripts/hetzner-firewall-update.sh  >> /var/log/bunnycdn-allowlist.log 2>&1
 
 ___
-In traefik we have 2 options, or more I don't know about. For getting the users real ip behind a proxy. we can add
+In traefik we have 2 options, or more I don't know about.To get the users real ip behind a proxy. we can add a t
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MTY0ODU4NjksLTQyODAyNDM0NSwyOD
-QwOTk0MzZdfQ==
+eyJoaXN0b3J5IjpbLTE3NzIzMTA3ODIsLTE5MTY0ODU4NjksLT
+QyODAyNDM0NSwyODQwOTk0MzZdfQ==
 -->
