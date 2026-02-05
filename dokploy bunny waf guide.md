@@ -43,16 +43,16 @@ Go to the Hetzner console
 on the side, scroll down to security -> API tokens -> generate a token and save it in password manager.
 go to firewalls -> create firewalls -> 
 create 3 firewalls, bunnycdn1, bunnycdn2, bunnycdn3
-add an ip 
+add an ip from here as placeholder for port 80/443 https://bunnycdn.com/api/system/edgeserverlist/plain
 
 Hetzner sets the firewall rules in an api call but it limits to  500 ips per request, even though the firewall holds more, we can't append to it, so each request overrides all the rules.. which means we have to add the 9400 bunny ips to multiple firewalls. 
 
 **make sure your main firewall doesnt have 'any ip' for port 80/443** . I would only leave those open and let traefik proxy route to them. You can also leave port 22 for your ip only, but tailscale works without it.
-
+apply these to your hetzner server running dokploy
 ___
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzU1MTAyMzM5LDU3MTUyNTMwMywzMzkyNj
-Y1NzYsLTE1NzM4MDU3NDQsLTc1Mjg3MjY2MiwtMTU4NzM5NjE2
-MiwxNzQzMzQxMTYyLDQxMzU1OTkyNCw2Njc4MTY1MDJdfQ==
+eyJoaXN0b3J5IjpbLTE0MTQ1MDc4MDcsMzU1MTAyMzM5LDMzOT
+I2NjU3NiwtMTU3MzgwNTc0NCwtNzUyODcyNjYyLC0xNTg3Mzk2
+MTYyLDE3NDMzNDExNjIsNDEzNTU5OTI0LDY2NzgxNjUwMl19
 -->
