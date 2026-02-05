@@ -94,8 +94,9 @@ scroll down and add these scripts:
 0 15 * * * /etc/dokploy/cron-scripts/hetzner-firewall-update.sh  >> /var/log/bunnycdn-allowlist.log 2>&1
 
 ___
-In traefik we have 2 options, or more I don't know about.To get the users real ip behind a proxy. we can add a t
+In traefik we have 2 options, or more I don't know about.To get the users real ip behind a proxy. we can add an array of trusted Ip's or simple turn on insecure mode https://doc.traefik.io/traefik/v1.4/configuration/entrypoints/#proxyprotocol
+Note bunny has 940 Ips.. 🙃 and cloudfare has less than 20. We could have a script do it, but something could go wrong messing with our main st
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NzIzMTA3ODIsLTE5MTY0ODU4NjksLT
-QyODAyNDM0NSwyODQwOTk0MzZdfQ==
+eyJoaXN0b3J5IjpbMTE2MzgyNzQ1MCwtMTkxNjQ4NTg2OSwtND
+I4MDI0MzQ1LDI4NDA5OTQzNl19
 -->
