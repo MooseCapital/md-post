@@ -7,8 +7,10 @@ What you need
  2. hetzner vps server*emphasized text*
  3. a domain
 
+This guide involves setting firewall rules at the hetzner network firewall level before it reaches the server. trying to get iptables to work with docker is complex
+
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI0NTcxMjc3Ml19
+eyJoaXN0b3J5IjpbLTE1NDA0NTY4OTRdfQ==
 -->
