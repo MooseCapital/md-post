@@ -58,7 +58,7 @@ In Shield, you'll need to turn it on. The free plan is fine.
 
 Look around at the rules. **The most important part** is to add an access list with your IP and select 'Bypass' in the dropdown, so you're never blocked from accessing your hosted services.
 
-![enter image description here](https://b.l3n.co/FxCeMi.png)
+![enter image description here](https://wsrv.nl/?url=https://b.l3n.co/FxCeMi.png)
 
 ## Part 4: Hetzner Firewall Setup
 
@@ -80,7 +80,6 @@ Go to the Hetzner console:
 ### Create Firewalls
 
 Go to **Firewalls → Create Firewall**
-
 Create three firewalls: `bunnycdn1`, `bunnycdn2`, `bunnycdn3`
 
 Add an IP from here as a placeholder for ports 80/443:  
@@ -95,7 +94,6 @@ Apply these three firewalls to your Hetzner server running Dokploy.
 ### Get Your Firewall IDs
 
 Make this API call in terminal to get the firewall IDs:
-
 ```bash
 export HETZNER_API_TOKEN='key_here'
 curl -H "Authorization: Bearer $HETZNER_API_TOKEN" \
@@ -262,6 +260,5 @@ To me, the WAF is cheap enough since you're paying per million requests. The rea
 Crowdsec is easy enough to set up but another thing to worry about, plus all the other things we would need to replicate Bunny's WAF that is less than $1 per million requests.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MzMxNzA4MDgsLTE1OTQ2OTA1MTZdfQ
-==
+eyJoaXN0b3J5IjpbNDM5ODM0NTA3LC0xNTk0NjkwNTE2XX0=
 -->
