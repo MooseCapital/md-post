@@ -1,7 +1,7 @@
 # Dokploy bunny.net waf guide on hetzner
 Why bunny and not cloudfare? because cloudfare does not give clear $ pricing per x million request and bandwidth. They are waiting to [trap you](https://www.reddit.com/r/CloudFlare/comments/1oa4lut/does_cloudflare_really_not_charge_for/nk73eka/) once you are locked into their proprietary tools. Give this a watch: https://youtu.be/8zj7ei5Egk8
 
-This is a great way to offload our security to a provider thats fairly cheap and worry about dev. Since I'm using the free tier, I still have crowdsec running on my server. Crowdsec seems to catch a lot passing through the waf, but the detection on free tier isnt as good as features in premium/business.
+This is a great way to offload our security to a provider thats fairly cheap and worry about developing not hosting. Since I'm using the free tier, I still have crowdsec running on my server. Crowdsec seems to catch a lot passing through the bunny waf, but the detection on free tier isnt as good as features in premium/business.
 What you need
 
  1. bunny.net account (you get free trial, no card required)
@@ -37,8 +37,9 @@ ssh into your server, you need to only allow access to the server with bunny ips
 
 note bunny has these links with the list of updated ips https://support.bunny.net/hc/en-us/articles/115003578911-How-to-detect-when-BunnyCDN-PoP-servers-are-accessing-your-backend
 
+Check this guide someone made, its basically fetching cloudfares ip list, and calling hetzners api which adds these ips to a firewall rule, and that firewall is applied to the server. This is what will happen, but just with bunny since
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUxNTc5ODMzNSwtMTU4NzM5NjE2MiwxNz
+eyJoaXN0b3J5IjpbMTIzMjk4NjMyNywtMTU4NzM5NjE2MiwxNz
 QzMzQxMTYyXX0=
 -->
