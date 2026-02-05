@@ -138,8 +138,8 @@ x-real-ip or this from traefik "Only IPs in `trustedIPs` will be authorized to t
 However, since we completely blocked access to our server except bunny, then I know all request come from bunny, and bunny waf will pass along the real users ip. If I don't turn on this insecure mode or add trusted Ip's then traefik logs will only show bunny's ips. and my crowdsec parser will only see bunny ip's in the traefik logs so it won't ever ban any users for malicious request since I added all 940 bunny ips to crowdsec allowlist.
 
 ## Crowdsec vs Bunny waf
-I'm no e
+I'm no expert on setting up a firewall, It comes down to do you want to worry about your own security or 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNTUyMzc0NiwtMTA0MzcyNzQwMSwtMT
-kxNjQ4NTg2OSwtNDI4MDI0MzQ1LDI4NDA5OTQzNl19
+eyJoaXN0b3J5IjpbLTc0ODM3MjU0LC0xMDQzNzI3NDAxLC0xOT
+E2NDg1ODY5LC00MjgwMjQzNDUsMjg0MDk5NDM2XX0=
 -->
