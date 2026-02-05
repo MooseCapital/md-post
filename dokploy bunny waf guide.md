@@ -21,8 +21,11 @@ https://support.bunny.net/hc/en-us/articles/21123161178396-What-is-CDN-Accelerat
 ![enter image description here](https://c.l3n.co/FxCKb1.png)
 
 Bunny has combined the services, so you need a pull zone, that has cdn, and the waf shield in 1 place.
-In the sidebar:  CDN -> pullzone (one with my domain record) -> 
+In the sidebar:  CDN -> pullzone (one with my domain record) -> caching -> general
+here i set **cache expiration time** to "override do not cache" all traffic will hit our server, so only focus on waf for now.
+
+Also, since I'm using a wildcard * record. if i had CDN on, it would cache things from beszel.mysite.com and i would see it on ghost.mysite.com 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTU4MDkxMjAxLDQxMzU1OTkyNCw2Njc4MT
-Y1MDJdfQ==
+eyJoaXN0b3J5IjpbMTc3NTU5MjEwNSw0MTM1NTk5MjQsNjY3OD
+E2NTAyXX0=
 -->
